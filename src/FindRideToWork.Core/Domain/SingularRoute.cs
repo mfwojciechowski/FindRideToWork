@@ -11,6 +11,16 @@ namespace FindRideToWork.Core.Domain
 
         public ICollection<PassengerRoutePoint> PassengersRoutePoints { get; protected set; }
 
+        public SingularRoute(Guid singularRouteId, Route route)
+        {
+
+        }
+        
+        //AddSingularRoute()
+        //RemoveSingularRoute()
+        //GetSingularRoute
+
+
 
     }
 }

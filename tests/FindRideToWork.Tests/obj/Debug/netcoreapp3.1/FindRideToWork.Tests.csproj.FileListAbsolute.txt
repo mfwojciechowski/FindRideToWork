@@ -19,7 +19,6 @@ C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\testhost.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\xunit.assert.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\xunit.core.dll
@@ -96,3 +95,4 @@ C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netcoreapp3.1\FindRideToWork.Tests.csproj.CopyComplete
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netcoreapp3.1\FindRideToWork.Tests.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netcoreapp3.1\FindRideToWork.Tests.pdb
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll

@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "QVT3+sCqXYeqPrDrKSdkmX6LujWk0QfRgxrN3HgUmZw01uPpxjPaSmAs2t7DFd7r4uH+EUbpKrcICJMx0yqifQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
+      "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
       "projectName": "FindRideToWork.Core",
-      "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
+      "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
       "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\obj\\",
+      "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -17,9 +17,11 @@ namespace FindRideToWork.Core.Domain
         public DateTime UpdatedAt { get; protected set; }
         public string FullName { get { return $"{FirstName} {LastName}"; } }
 
+        //ArgumentExcepction 
+
         public User(Guid userId, string firstName, string lastName, string email, int role, string hashPassword, string saltPassword, string username)
         {
-            UserId = userId;
+            UserId = userId == Guid.Empty? throw new Exception("Invalid UserId.") : userId;
             SetFirstName(firstName);
             SetLastName(firstName);
             SetEmail(email);
@@ -30,21 +32,23 @@ namespace FindRideToWork.Core.Domain
 
         private void SetPassword(string hashPassword, string saltPassword)
         {
-            if (HashPassword == hashPassword || SaltPassword == saltPassword)
+            if(string.IsNullOrEmpty(hashPassword) || string.IsNullOrEmpty(saltPassword))
             {
-                return;
+                throw new Exception("Password cannot be null.");
             }
+
+            if (HashPassword == hashPassword || SaltPassword == saltPassword) return;
 
             HashPassword = hashPassword;
             SaltPassword = saltPassword;
             UpdatedAt = DateTime.UtcNow;
         }
 
-        public void SetUsername(string username)
+        private void SetUsername(string username)
         {
             if (!Helpers.usernameRegex.IsMatch(username))
             {
-                throw new Exception("Username is invalid");
+                throw new Exception("Username is invalid.");
             }
 
             Username = username.ToLower();
@@ -54,8 +58,10 @@ namespace FindRideToWork.Core.Domain
         {
             if (!Enum.IsDefined(typeof(Roles), role))
             {
-                throw new Exception("Invalid role type");
+                throw new Exception("Invalid role type.");
             }
+
+            if(role == Role) return;
 
             Role = role;
             UpdatedAt = DateTime.UtcNow;
@@ -65,13 +71,15 @@ namespace FindRideToWork.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(email))
             {
-                throw new Exception("Email cannot be empty");
+                throw new Exception("Email cannot be empty.");
             }
 
-            if (Email == email)
+            if(!Helpers.emailRegex.IsMatch(email))
             {
-                return;
+                throw new Exception("Email is invalid.");
             }
+
+            if (Email == email) return;
 
             Email = email.ToLower();
             UpdatedAt = DateTime.UtcNow;
@@ -79,11 +87,13 @@ namespace FindRideToWork.Core.Domain
 
         private void SetFirstName(string firstName)
         {
-            if (string.IsNullOrEmpty(LastName))
+            if (string.IsNullOrWhiteSpace(firstName))
             {
-                throw new Exception("Firstname cannot be empty");
+                throw new Exception("Firstname cannot be empty.");
             }
 
+            if (firstName == FirstName) return;
+            
             FirstName = firstName;
             UpdatedAt = DateTime.UtcNow;
         }
@@ -92,8 +102,10 @@ namespace FindRideToWork.Core.Domain
         {
             if (string.IsNullOrWhiteSpace(lastname))
             {
-                throw new Exception("Lastname name cannot be empty");
+                throw new Exception("Lastname name cannot be empty.");
             }
+
+            if (lastname == LastName) return;
 
             LastName = lastname;
             UpdatedAt = DateTime.UtcNow;

@@ -9,6 +9,6 @@ namespace FindRideToWork.Core.Domain
         public Guid UserId { get; protected set; }
         public ICollection<PassengerRoutePoint> PickUpPoints { get; protected set;}
         
-        // PASSENGER HAS A CAR AND OFFER ANOTHER ROUTES
+        // PASSENGER HAS A CAR AND OFFER ANOTHER ROUTES ?? 
     }
 }

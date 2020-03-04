@@ -3,20 +3,16 @@ using System;
 using FindRideToWork.Core.Domain;
 
 namespace FindRideToWork.Tests.CoreDomains
-{
+{    
     public class UserTests
     {
         [Fact]
-        public void TestName()
-        {
-        //Given
-        var user = new User(Guid.NewGuid(), "Jan", "Kowalski", "Kowalski", 5, "str", "str", "str");
-        
-        user.Assert(true);
-        //When
-        
-        //Then
+        public void new_user_constructor_with_empty_password_should_throw_excepction()
+        {            
+            Exception ex = Assert.Throws<Exception>(() => new User(new Guid(), "Michal", "Wojciechowski", "email@email.com", 1, null, null, "username"));
+            Assert.Equal("Password cannot be null.", ex.Message);
+
+
         }
-        
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {}
+    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {
+    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
+        "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
         "projectName": "FindRideToWork.Api",
-        "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
+        "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\obj\\",
+        "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj"
+              "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
+                "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
+    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
+        "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
         "projectName": "FindRideToWork.Core",
-        "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
+        "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\obj\\",
+        "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
+    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
+        "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
         "projectName": "FindRideToWork.Infrastructure",
-        "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
+        "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\obj\\",
+        "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -150,8 +150,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
-                "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj"
+              "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
+                "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj"
               }
             }
           }

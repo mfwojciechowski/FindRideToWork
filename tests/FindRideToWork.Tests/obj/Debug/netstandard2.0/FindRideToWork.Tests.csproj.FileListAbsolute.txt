@@ -1,0 +1,17 @@
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\xunit.runner.visualstudio.testadapter.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\xunit.runner.reporters.net452.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\xunit.runner.utility.net452.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\xunit.abstractions.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Tests.deps.json
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Tests.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Tests.pdb
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Core.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Infrastructure.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Core.pdb
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netstandard2.0\FindRideToWork.Infrastructure.pdb
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netstandard2.0\FindRideToWork.Tests.csprojAssemblyReference.cache
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netstandard2.0\FindRideToWork.Tests.AssemblyInfoInputs.cache
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netstandard2.0\FindRideToWork.Tests.AssemblyInfo.cs
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netstandard2.0\FindRideToWork.Tests.csproj.CopyComplete
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netstandard2.0\FindRideToWork.Tests.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netstandard2.0\FindRideToWork.Tests.pdb
