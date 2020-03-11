@@ -21,3 +21,5 @@ C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netc
 C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\FindRideToWork.Infrastructure.pdb
 C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\FindRideToWork.Core.pdb
 C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\obj\Debug\netcoreapp3.1\FindRideToWork.Api.csproj.CopyComplete
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll

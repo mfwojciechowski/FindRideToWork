@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {}
+    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {
+    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
+        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
         "projectName": "FindRideToWork.Api",
-        "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
+        "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\FindRideToWork.Api.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\obj\\",
+        "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
-                "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj"
+              "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj"
               }
             }
           }
@@ -44,6 +44,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -66,14 +76,14 @@
         }
       }
     },
-    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
+    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
+        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
         "projectName": "FindRideToWork.Core",
-        "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
+        "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\obj\\",
+        "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -124,14 +134,14 @@
         }
       }
     },
-    "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
+    "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
         "projectName": "FindRideToWork.Infrastructure",
-        "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\FindRideToWork.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -150,8 +160,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
-                "projectPath": "c:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj"
+              "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj": {
+                "projectPath": "C:\\Users\\micha\\source\\repos\\FindRideToWork\\src\\FindRideToWork.Core\\FindRideToWork.Core.csproj"
               }
             }
           }
@@ -165,6 +175,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

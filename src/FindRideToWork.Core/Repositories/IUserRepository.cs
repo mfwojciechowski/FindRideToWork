@@ -1,17 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FindRideToWork.Core.Domain;
 
 namespace FindRideToWork.Core.Repositories
 {
     public interface IUserRepository
     {
-        User Get(Guid id);
-        IEnumerable<User> GetAll();
-        void Remove (Guid id);
-        void Update(User user);
-        User Get(string email);
-        void Save(User user);
+        Task<User> GetAsync(Guid id);
+        Task RemoveAsync (Guid id);
+        Task UpdateAsync(User user);
+        Task<User> GetAsync(string email);
+        Task SaveAsync(User user);
+        Task AddAsync(User user);
     }
 
     //IDriverRepository

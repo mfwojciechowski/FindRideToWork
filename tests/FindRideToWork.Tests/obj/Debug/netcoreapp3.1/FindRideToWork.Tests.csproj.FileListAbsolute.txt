@@ -96,3 +96,4 @@ C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netcoreapp3.1\FindRideToWork.Tests.dll
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\obj\Debug\netcoreapp3.1\FindRideToWork.Tests.pdb
 C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\micha\source\repos\FindRideToWork\tests\FindRideToWork.Tests\bin\Debug\netcoreapp3.1\Autofac.dll

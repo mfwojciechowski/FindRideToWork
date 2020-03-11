@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "FindRideToWork.Tests/1.0.0": {
         "dependencies": {
+          "Autofac": "5.1.2",
           "FindRideToWork.Core": "1.0.0",
           "FindRideToWork.Infrastructure": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.5.0",
@@ -17,6 +18,14 @@
         },
         "runtime": {
           "FindRideToWork.Tests.dll": {}
+        }
+      },
+      "Autofac/5.1.2": {
+        "runtime": {
+          "lib/netstandard2.1/Autofac.dll": {
+            "assemblyVersion": "5.1.2.0",
+            "fileVersion": "5.1.2.0"
+          }
         }
       },
       "coverlet.collector/1.0.1": {},
@@ -1100,6 +1109,7 @@
       },
       "FindRideToWork.Infrastructure/1.0.0": {
         "dependencies": {
+          "Autofac": "5.1.2",
           "FindRideToWork.Core": "1.0.0"
         },
         "runtime": {
@@ -1113,6 +1123,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Autofac/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iGEx5Cm6Uor6/bZkgCHHjJO8cEQvDSOxgzNmHGJgGOnLDCe0b8NpOlhotsqx8dFvBDCsEX/V3YGRR30sRQLsxw==",
+      "path": "autofac/5.1.2",
+      "hashPath": "autofac.5.1.2.nupkg.sha512"
     },
     "coverlet.collector/1.0.1": {
       "type": "package",
