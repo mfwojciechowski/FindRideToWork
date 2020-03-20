@@ -12,10 +12,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using FindRideToWork.Infrastructure.InfrastructureModule;
+using FindRideToWork.Infrastructure.InfrastructureModules;
 using FindRideToWork.Infrastructure.Services;
 using FindRideToWork.Infrastructure.Repositories;
 using FindRideToWork.Core.Repositories;
+using FindRideToWork.Infrastructure.Mapper;
+using Microsoft.OpenApi.Models;
+using FindRideToWork.Infrastructure.Repositories.InMemoryReposiories;
 
 namespace FindRideToWork.Api
 {
@@ -26,21 +29,27 @@ namespace FindRideToWork.Api
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-        public IContainer ApplicationContainer { get; private set; }
+        public IConfiguration Configuration { get; private set; }
+        public ILifetimeScope AutofacContainer { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(AutoMapperConfiguration.Init());
             services.AddControllers();
-        
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            });
+        }
 
-            var builder = new ContainerBuilder();
-            builder.RegisterModule<InfrastructureModule>();
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
+            builder.RegisterType<DriverService>().As<IDriverService>().InstancePerLifetimeScope();
             builder.RegisterType<InMemoryUserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
-            builder.Populate(services);
-            ApplicationContainer = builder.Build();
+            builder.RegisterType<InMemoryDriverRepository>().As<IDriverRepository>().InstancePerLifetimeScope();
+            builder.RegisterModule<CommandModule>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,19 +59,23 @@ namespace FindRideToWork.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            applicationLifetime.ApplicationStopped.Register(() => ApplicationContainer.Dispose());
+           
+            this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+            applicationLifetime.ApplicationStopped.Register(() => AutofacContainer.Dispose());
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseAuthorization();
-
+            //app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+             app.UseSwagger();
+             app.UseSwaggerUI(c =>
+             {
+                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+             });
+
         }
     }
 }

@@ -7,15 +7,9 @@ namespace FindRideToWork.Core.Repositories
 {
     public interface IUserRepository
     {
-        Task<User> GetAsync(Guid id);
-        Task RemoveAsync (Guid id);
-        Task UpdateAsync(User user);
-        Task<User> GetAsync(string email);
-        Task SaveAsync(User user);
-        Task AddAsync(User user);
+        Task<IEnumerable<User>> GetUsersAsync();
+        Task<User> GetUserAsync(string email);
+        Task<User> GetUserAsync(Guid userId);
+        Task AddUserAsync(User user);
     }
-
-    //IDriverRepository
-    //IPassengerRepository
-    
 }

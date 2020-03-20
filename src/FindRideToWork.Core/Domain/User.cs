@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using FindRideToWork.Core.Base;
 
 namespace FindRideToWork.Core.Domain
@@ -10,29 +11,25 @@ namespace FindRideToWork.Core.Domain
         public string LastName { get; protected set; }
         public string Email { get; protected set; }
         public int Role { get; protected set; }
-        public string HashPassword { get; protected set; }
-        public string SaltPassword { get; protected set; }
-        public string Username { get; protected set; }
+        public byte[] HashPassword { get; protected set; }
+        public byte[] SaltPassword { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
         public DateTime UpdatedAt { get; protected set; }
         public string FullName { get { return $"{FirstName} {LastName}"; } }
 
-        //ArgumentExcepction 
-
-        public User(Guid userId, string firstName, string lastName, string email, int role, string hashPassword, string saltPassword, string username)
+        public User(Guid userId, string firstName, string lastName, string email, int role, byte[] hashPassword, byte[] saltPassword)
         {
             UserId = userId == Guid.Empty? throw new Exception("Invalid UserId.") : userId;
             SetFirstName(firstName);
             SetLastName(firstName);
             SetEmail(email);
             SetRole(role);
-            SetUsername(username);
             SetPassword(hashPassword, saltPassword);
         }
 
-        private void SetPassword(string hashPassword, string saltPassword)
+        private void SetPassword(byte[] hashPassword, byte[] saltPassword)
         {
-            if(string.IsNullOrEmpty(hashPassword) || string.IsNullOrEmpty(saltPassword))
+            if(hashPassword == null || saltPassword == null)
             {
                 throw new Exception("Password cannot be null.");
             }
@@ -42,16 +39,6 @@ namespace FindRideToWork.Core.Domain
             HashPassword = hashPassword;
             SaltPassword = saltPassword;
             UpdatedAt = DateTime.UtcNow;
-        }
-
-        private void SetUsername(string username)
-        {
-            if (!Helpers.usernameRegex.IsMatch(username))
-            {
-                throw new Exception("Username is invalid.");
-            }
-
-            Username = username.ToLower();
         }
 
         private void SetRole(int role)

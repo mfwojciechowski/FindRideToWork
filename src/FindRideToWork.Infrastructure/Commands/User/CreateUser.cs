@@ -1,9 +1,8 @@
-namespace FindRideToWork.Infrastructure.Commands.Users
+namespace FindRideToWork.Infrastructure.Commands.User
 {
     public class CreateUser : ICommand
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string Password { get; set;  }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

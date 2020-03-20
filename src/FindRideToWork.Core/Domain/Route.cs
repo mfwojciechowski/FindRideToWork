@@ -20,7 +20,7 @@ namespace FindRideToWork.Core.Domain
             EndPoint = endPoint;
         }
 
-        private void SetRouteName(string routeName)
+        public void SetRouteName(string routeName)
         {
             if (string.IsNullOrWhiteSpace(routeName))
             {

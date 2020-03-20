@@ -1,29 +1,32 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FindRideToWork.Infrastructure.Commands;
-using FindRideToWork.Infrastructure.Commands.Users;
+using FindRideToWork.Infrastructure.Commands.Account;
+using FindRideToWork.Infrastructure.Commands.User;
+using FindRideToWork.Infrastructure.DTO.User;
+using FindRideToWork.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FindRideToWork.Api.Controllers
 {
     public class AccountController : ApiCustomController
     {
-        public AccountController(ICommandDispatcher commandDispatcher)
+        private readonly IUserService _userService;
+        public AccountController(ICommandDispatcher commandDispatcher, IUserService userService)
         : base(commandDispatcher)
         {
+            _userService = userService;
         }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody]CreateUser command)
+        [HttpPost("resetpassword")]
+        public async Task ResetPassword([FromBody]ResetPassword command)
         {
             await CommandDispatcher.DispatchAsync(command);
-            return Created($"users/{command.Email}", null);
         }
 
-        [HttpGet("{id}")]
-
-        public IActionResult GetValue(int id)
+        [HttpPost("changepassword")]
+        public async Task ChangePassword([FromBody]ChangePassword command)
         {
-            return Ok(3);
+            await CommandDispatcher.DispatchAsync(command);
         }
     }
 }

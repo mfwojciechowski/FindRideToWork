@@ -23,3 +23,11 @@ C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netc
 C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\obj\Debug\netcoreapp3.1\FindRideToWork.Api.csproj.CopyComplete
 C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Autofac.dll
 C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\micha\source\repos\FindRideToWork\src\FindRideToWork.Api\obj\Debug\netcoreapp3.1\FindRideToWork.Api.MvcApplicationPartsAssemblyInfo.cs
