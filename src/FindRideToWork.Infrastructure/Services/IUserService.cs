@@ -8,8 +8,10 @@ namespace FindRideToWork.Infrastructure.Services
 {
     public interface IUserService
     {
-        Task RegisterAsync(Guid userId, string firstName, string lastName, string email, int role, string password);
+        Task RegisterAsync(Guid userId, string firstName, string lastName, string email, int role, string password, bool isVerified, int languageId);
         Task<IEnumerable<UserDTO>> GetUsersAsync();
         Task<UserDTO> GetUserAsync(string email);
+        Task ChangePasswordAsync(Guid userId, string password, string newPassword);
+        Task LoginAsync(string email, string password);
     }
 }

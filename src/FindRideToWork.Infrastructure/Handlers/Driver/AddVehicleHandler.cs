@@ -14,7 +14,7 @@ namespace FindRideToWork.Infrastructure.Handlers.Driver
         }
         public async Task HandleAsync(AddVehicle command)
         {
-            await _driverService.AddVehicle(command.UserId, command.Brand, command.SeatsNumber, command.Doors, command.Plates, command.CarModel);
+            await _driverService.AddVehicleAsync(command.UserId, command.Brand, command.SeatsNumber, command.Doors, command.Plates, command.CarModel, command.ColorId);
         }
         
     }

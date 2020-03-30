@@ -1,4 +1,5 @@
 using System;
+using FindRideToWork.Core.Entities;
 
 namespace FindRideToWork.Core.Domain
 {
@@ -12,15 +13,28 @@ namespace FindRideToWork.Core.Domain
         public string Brand { get; protected set; }
         public string Plates { get; protected set; }
         public int Doors { get; protected set; }
+        public int ColourId { get; protected set; }
 
-        public Vehicle(string brand, int seats, int doors, string plates, string carModel)
+        public virtual Colour Colour {get;set;}
+
+        public Vehicle()
         {            
+        }
+
+        public Vehicle(string brand, int seats, int doors, string plates, string carModel, int colourId)
+        {
+            SetColour(colourId);
             SetBrand(brand);
             SetSeats(seats);            
             SetDoors(doors);
             SetCarModel(carModel);
             SetPlates(plates);
         }
+ 
+        private void SetColour(int colourId)
+        {
+            ColourId = colourId;
+        } 
 
         private void SetCarModel(string carModel)
         {
@@ -87,7 +101,7 @@ namespace FindRideToWork.Core.Domain
             Plates = plates;
         }
 
-        public static Vehicle Create(string brand, int seats, int doors, string plates, string carModel)
-            => new Vehicle(brand, seats, doors, plates, carModel);
+        public static Vehicle Create(string brand, int seats, int doors, string plates, string carModel, int colourId)
+            => new Vehicle(brand, seats, doors, plates, carModel, colourId);
     }
 }

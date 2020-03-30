@@ -7,7 +7,23 @@ namespace FindRideToWork.Infrastructure.Commands.User
         public string LastName { get; set; }
         public string Email { get; set; }
         public int RoleId
-        { 
+         {
+            get 
+            {
+                return 1;
+            }
+        }
+
+        public bool isVerified 
+         {
+            get 
+            {
+                return false;
+            }
+        }
+
+        public int LanguageId
+         {
             get 
             {
                 return 1;

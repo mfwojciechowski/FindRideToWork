@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using FindRideToWork.Infrastructure.Commands;
 using FindRideToWork.Infrastructure.Commands.Driver;
@@ -5,16 +6,17 @@ using FindRideToWork.Infrastructure.Services;
 
 namespace FindRideToWork.Infrastructure.Handlers.Driver
 {
-    public class CreateDriverHandler : ICommandHandler<CreateDriver>
+    public class CreateDriverHandler : ICommandHandler<AddDriver>
     {
         private readonly IDriverService _driverService;
         public CreateDriverHandler(IDriverService driverService)
         {
             _driverService = driverService;
         }
-        public async Task HandleAsync(CreateDriver command)
+        public async Task HandleAsync(AddDriver command)
         {
-            await _driverService.CreateDriverAsync(command.UserId);
+            // UPDATE DRIVER FLAG IN USER
+            await _driverService.AddDriverAsync(command.UserId);
         }
     }
 }

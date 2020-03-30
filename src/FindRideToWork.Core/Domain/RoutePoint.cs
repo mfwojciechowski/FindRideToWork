@@ -8,7 +8,12 @@ namespace FindRideToWork.Core.Domain
         public double Longitude { get; protected set; }
         public string Address { get; protected set; }
 
-        public RoutePoint(double latitude, double longitude, string address)
+        public RoutePoint()
+        {
+            
+        }
+
+        public RoutePoint( double latitude, double longitude, string address)
         {
             SetAddress(address);
             SetCoordinates(latitude, longitude);

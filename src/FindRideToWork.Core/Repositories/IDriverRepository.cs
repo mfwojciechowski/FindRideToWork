@@ -7,6 +7,8 @@ namespace FindRideToWork.Core.Repositories
     public interface IDriverRepository
     {        
         Task<Driver> GetDriverAsync(Guid userId);
-        Task CreateDriverAsync(Driver driver);
+        Task AddDriverAsync(Driver driver);
+        Task UpdateDriverAsync(Driver driver);
+        Task CreateDriverRouteAsync(Route route);
     }
 }

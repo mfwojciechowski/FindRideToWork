@@ -10,5 +10,12 @@ namespace FindRideToWork.Infrastructure.Commands.Driver
         public string Brand { get; set; }
         public string Plates { get; set; }
         public int Doors { get; set; }        
+        public int ColorId 
+        { 
+            get
+            {
+                return 1;
+            } 
+        }        
     }
 }

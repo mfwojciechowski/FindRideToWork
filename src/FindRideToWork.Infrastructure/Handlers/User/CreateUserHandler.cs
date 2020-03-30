@@ -15,7 +15,7 @@ namespace FindRideToWork.Infrastructure.Handlers.User
         }
         public async Task HandleAsync(CreateUser command)
         {            
-            await _userService.RegisterAsync(Guid.NewGuid(), command.FirstName, command.LastName, command.Email, command.RoleId, command.Password);
+            await _userService.RegisterAsync(Guid.NewGuid(), command.FirstName, command.LastName, command.Email, command.RoleId, command.Password, command.isVerified, command.LanguageId);
             //send email to user
         }
     }

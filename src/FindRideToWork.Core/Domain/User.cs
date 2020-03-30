@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using FindRideToWork.Core.Base;
+using FindRideToWork.Core.Entities;
 
 namespace FindRideToWork.Core.Domain
 {
@@ -15,9 +17,22 @@ namespace FindRideToWork.Core.Domain
         public byte[] SaltPassword { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
         public DateTime UpdatedAt { get; protected set; }
+        public int LanguageId { get; protected set; }
+        public bool IsVerified { get; protected set; }
         public string FullName { get { return $"{FirstName} {LastName}"; } }
 
-        public User(Guid userId, string firstName, string lastName, string email, int role, byte[] hashPassword, byte[] saltPassword)
+        public ICollection<Friends> Friends
+        {
+            get { return _friends; }
+            set { _friends = new HashSet<Friends>(value); }
+        }
+        private ISet<Friends> _friends = new HashSet<Friends>();
+
+        public User()
+        {            
+        }
+
+        public User(Guid userId, string firstName, string lastName, string email, int role, byte[] hashPassword, byte[] saltPassword, bool isVerified, int languageId)
         {
             UserId = userId == Guid.Empty? throw new Exception("Invalid UserId.") : userId;
             SetFirstName(firstName);
@@ -25,9 +40,36 @@ namespace FindRideToWork.Core.Domain
             SetEmail(email);
             SetRole(role);
             SetPassword(hashPassword, saltPassword);
+            SetIsVerified(isVerified);
+            SetLanguage(languageId);
         }
 
-        private void SetPassword(byte[] hashPassword, byte[] saltPassword)
+        public void AddFriend(Friends friend)
+        {
+            if(friend == null)
+            {
+                throw new Exception("Friend cannot be null!");
+            }
+            _friends.Add(friend);
+        }
+
+        private void SetIsVerified(bool isVerified)
+        {
+            if(isVerified == IsVerified) return;
+
+            IsVerified = isVerified;
+            UpdatedAt = DateTime.Now;
+        }
+
+        private void SetLanguage(int languageId)
+        {
+            if(languageId == LanguageId) return;
+
+            LanguageId = languageId;
+            UpdatedAt = DateTime.Now;
+        }
+
+        public void SetPassword(byte[] hashPassword, byte[] saltPassword)
         {
             if(hashPassword == null || saltPassword == null)
             {
@@ -100,8 +142,14 @@ namespace FindRideToWork.Core.Domain
 
         enum Roles : int
         {
-            USER,
+            USER =1,
             ADMIN
+        }
+
+        enum Lanugages : int
+        {
+            Polish = 1,
+            English
         }
     }
 }

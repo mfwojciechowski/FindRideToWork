@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FindRideToWork.Infrastructure.Commands;
 using FindRideToWork.Infrastructure.Commands.Driver;
@@ -19,8 +20,8 @@ namespace FindRideToWork.Api.Controllers
             _driverService = driverService;
         }
 
-        [HttpPost("createdriver")]
-        public async Task CreateDriver([FromBody]CreateDriver command)
+        [HttpPost("adddriver")]
+        public async Task AddDriver([FromBody]AddDriver command)
         {
             await CommandDispatcher.DispatchAsync(command);
         }
@@ -30,10 +31,11 @@ namespace FindRideToWork.Api.Controllers
         {
             await CommandDispatcher.DispatchAsync(command);
         }
+        
         [HttpGet("getdriver/{userId}")]
-        public async Task<DriverDTO> GetDriver(Guid userId)
+        public async Task<IEnumerable<Guid>> GetDriver(Guid userId)
         {
-            return await _driverService.GetDriver(userId);
+            return await _driverService.GetDriverRoute(userId);
         }
     }
 }
