@@ -11,7 +11,7 @@ namespace FindRideToWork.Infrastructure.Mongo
         public static void Initialize()
         {
             if(_isInitialized)
-            {
+            { 
                 return;
             }
             RegisterConventions();
