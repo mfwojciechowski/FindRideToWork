@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using FindRideToWork.Infrastructure.Commands;
 using Microsoft.AspNetCore.Mvc;
@@ -8,11 +9,21 @@ namespace FindRideToWork.Api.Controllers
     [Route("[controller]")]
     public abstract class ApiCustomController : ControllerBase
     {
-        protected ICommandDispatcher CommandDispatcher;
+        private readonly ICommandDispatcher _commandDispatcher;
+        private Guid UserId => User?.Identity?.IsAuthenticated == true ? Guid.Parse(User.Identity.Name) : Guid.NewGuid();
 
         protected ApiCustomController(ICommandDispatcher commanddispatcher)
         {
-            CommandDispatcher = commanddispatcher;
+            _commandDispatcher = commanddispatcher;
+        }
+
+        protected async Task DispatchAsync<T>(T command) where T : ICommand
+        {
+            if(command is IAuthenticatiedCommand authCommand)
+            {
+                authCommand.UserId = UserId;
+            }
+            await _commandDispatcher.DispatchAsync(command);
         }
     }
 }

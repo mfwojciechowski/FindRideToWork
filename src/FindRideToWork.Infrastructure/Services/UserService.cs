@@ -6,6 +6,8 @@ using FindRideToWork.Core.Domain;
 using FindRideToWork.Core.Repositories;
 using FindRideToWork.Infrastructure.DTO.User;
 using AutoMapper;
+using FindRideToWork.Infrastructure.Auth;
+using Microsoft.AspNetCore.Identity;
 
 namespace FindRideToWork.Infrastructure.Services
 {
@@ -13,13 +15,17 @@ namespace FindRideToWork.Infrastructure.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        private readonly IJwtHandler _jwtHandler;
+        private readonly IPasswordHasher<User> _passwordHasher;
+        public UserService(IUserRepository userRepository, IMapper mapper, IJwtHandler jwtHandler, IPasswordHasher<User> passwordHasher)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _jwtHandler = jwtHandler;
+            _passwordHasher = passwordHasher;
         }
 
-        public async Task RegisterAsync(Guid userId, string firstName, string lastName, string email, int roleId, string password, bool isVerified, int languageId)
+        public async Task SignUpAsync(Guid userId, string firstName, string lastName, string email, int roleId, string password, bool isVerified, int languageId)
         {
             byte[] saltPassword;
             byte[] hashPassword;
@@ -28,7 +34,7 @@ namespace FindRideToWork.Infrastructure.Services
 
             if(user!=null)
             {
-                throw new Exception("User doesn't exist!");
+                throw new Exception("A User already exists!");
             }
 
             PasswordEncrypt(password, out saltPassword, out hashPassword);
@@ -89,14 +95,28 @@ namespace FindRideToWork.Infrastructure.Services
             return true;
         }
 
-        public async Task LoginAsync(string email, string password)
+        public async Task<IdentityJsonToken> SignInAsync(string email, string password)
         {
             var user = await _userRepository.GetUserAsync(email);
 
             if (user == null) throw new Exception("Invalid credentials!");
             if(!IsPasswordCorrect(password, user.HashPassword, user.SaltPassword)) throw new Exception("Invalid credentials!");
-            
-            return;
+
+            var jwt = _jwtHandler.CreateToken(user.UserId, user.Role.ToString());
+
+            var refreshToken = _passwordHasher.HashPassword(user, "password");
+
+            return new IdentityJsonToken
+            {
+                Expires = jwt.Expires,
+                RefreshToken = refreshToken, 
+                Token = jwt.Token
+            };
+        }
+
+        public Task SignUpAsync(string email, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }

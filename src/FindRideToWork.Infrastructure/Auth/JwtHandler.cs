@@ -6,48 +6,45 @@ using FindRideToWork.Infrastructure.Settings;
 using FindRideToWork.Infrastructure.Utils;
 using Microsoft.IdentityModel.Tokens;
 
-namespace FindRideToWork.Infrastructure.Services
+namespace FindRideToWork.Infrastructure.Auth
 {
-    public class JwtDTO {
-        public string Token { get; set; }
-        public string Expiry { get; set; }
-
-    }
     public class JwtHandler : IJwtHandler
-    {
+    {        
         private readonly JwtSettings _jwtSettings;
+        private readonly SecurityKey _issuerAuthKey;
+        private readonly SigningCredentials _signinCredentials;
         public JwtHandler(JwtSettings jwtSettings)
         {
             _jwtSettings = jwtSettings;
+            _issuerAuthKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.AuthKey));
+            _signinCredentials = new SigningCredentials(_issuerAuthKey, SecurityAlgorithms.HmacSha256);
         }
-        public JwtDTO CreateToken(Guid userId, string role)
+        public JsonWebToken CreateToken(Guid userId, string role)
         {
             var now = DateTime.Now;
-            var expiry = now.AddMinutes(_jwtSettings.ExpiryMinutes);
-            var testexpirty = expiry.ToTimestamp();
+            var expires = now.AddMinutes(_jwtSettings.ExpiryMinutes);
             var claims = new Claim[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, userId.ToString()),
                 new Claim(ClaimTypes.Role, role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, now.ToTimestamp())
             };
 
-            var signinCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.AuthKey)), SecurityAlgorithms.HmacSha256);
-
             var jwt = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,
                 claims: claims,
                 notBefore: now,
-                expires: expiry,
-                signingCredentials: signinCredentials
+                expires: expires,
+                signingCredentials: _signinCredentials
             );
 
             var token = new JwtSecurityTokenHandler().WriteToken(jwt);
-            return new JwtDTO
+            return new JsonWebToken
             {
                 Token = token,
-                Expiry = expiry.ToTimestamp()
+                Expires = expires.ToTimestamp()
             };
 
         }

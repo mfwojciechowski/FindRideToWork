@@ -23,7 +23,6 @@ namespace FindRideToWork.Infrastructure.Helpers.Extensions
                 option.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidIssuer = jwtSettings.Issuer,
-                    ValidateAudience = false ,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.AuthKey))
             });
             

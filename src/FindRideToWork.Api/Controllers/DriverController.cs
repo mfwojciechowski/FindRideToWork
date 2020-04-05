@@ -5,6 +5,7 @@ using FindRideToWork.Infrastructure.Commands;
 using FindRideToWork.Infrastructure.Commands.Driver;
 using FindRideToWork.Infrastructure.DTO.Driver;
 using FindRideToWork.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FindRideToWork.Api.Controllers
@@ -21,15 +22,17 @@ namespace FindRideToWork.Api.Controllers
         }
 
         [HttpPost("adddriver")]
+        [Authorize]
         public async Task AddDriver([FromBody]AddDriver command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
 
         [HttpPost("addvehicle")]
+        [Authorize]
         public async Task AddVehicle([FromBody]AddVehicle command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
         
         [HttpGet("getdriver/{userId}")]

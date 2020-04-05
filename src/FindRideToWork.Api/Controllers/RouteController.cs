@@ -4,10 +4,12 @@ using FindRideToWork.Infrastructure.Commands;
 using FindRideToWork.Infrastructure.Commands.Driver;
 using FindRideToWork.Infrastructure.DTO.Route;
 using FindRideToWork.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FindRideToWork.Api.Controllers
 {
+    [Authorize]
     public class RouteController : ApiCustomController
     {
         private readonly IUserService _userService;
@@ -25,13 +27,13 @@ namespace FindRideToWork.Api.Controllers
         [HttpPost("addroute")]
         public async Task AddRoute([FromBody]AddRoute command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
 
         [HttpPost("addsingularroute")]
         public async Task AddSingularRoute([FromBody] AddSingularRoute command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
 
         [HttpGet("getsingularoute/{leftLatitude},{rightLatitude},{upLongitude},{downLongitude}")]

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FindRideToWork.Infrastructure.Auth;
 using FindRideToWork.Infrastructure.Commands;
 using FindRideToWork.Infrastructure.Commands.User;
 using FindRideToWork.Infrastructure.DTO.User;
@@ -23,7 +24,7 @@ namespace FindRideToWork.Api.Controllers
         [HttpPost("createuser")]
         public async Task CreateUser([FromBody]CreateUser command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
 
         [HttpGet("users")]
@@ -41,13 +42,13 @@ namespace FindRideToWork.Api.Controllers
         [HttpPost("resetpassword")]
         public async Task ResetPassword([FromBody]ResetPassword command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
 
         [HttpPost("changepassword")]
         public async Task ChangePassword([FromBody]ChangePassword command)
         {
-            await CommandDispatcher.DispatchAsync(command);
+            await DispatchAsync(command);
         }
 
         [HttpGet("token")]
@@ -55,13 +56,6 @@ namespace FindRideToWork.Api.Controllers
         {
             var token = _jwtToken.CreateToken(Guid.NewGuid(), "user");
             return Ok(token);
-        }
-
-        [HttpGet("auth")]
-        [Authorize]
-        public IActionResult Auth()
-        {
-            return Ok("auth");
         }
     }
 }

@@ -25,6 +25,7 @@ using FindRideToWork.Infrastructure.Mongo;
 using FindRideToWork.Infrastructure.Helpers.Extensions;
 using FindRideToWork.Infrastructure.Settings;
 using System.Text;
+using FindRideToWork.Infrastructure.Auth;
 
 namespace FindRideToWork.Api
 {
